@@ -99,7 +99,7 @@ function GalleryView({ galleryKey }: { galleryKey: GalleryKey }) {
                     src={`https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`}
                     alt={`Animation film ${index + 1}`}
                   />
-                  <span>Play film {String(index + 1).padStart(2, "0")} ↗</span>
+                  <span>Play film {String(index + 1).padStart(2, "0")}</span>
                 </button>
               ))
             : items.map((item, index) => (
@@ -113,7 +113,7 @@ function GalleryView({ galleryKey }: { galleryKey: GalleryKey }) {
                   }}
                 >
                   <img src={item.thumb} alt={item.alt} loading="lazy" />
-                  <span>{String(index + 1).padStart(2, "0")} ↗</span>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
                 </button>
               ))}
         </div>
@@ -139,7 +139,7 @@ function GalleryView({ galleryKey }: { galleryKey: GalleryKey }) {
             onClick={() => setIsLightboxOpen(false)}
             aria-label="Close viewer"
           >
-            ×
+            Close
           </button>
           <button
             className="lightbox-nav lightbox-prev"
@@ -147,7 +147,7 @@ function GalleryView({ galleryKey }: { galleryKey: GalleryKey }) {
             onClick={() => move(-1)}
             aria-label="Previous image"
           >
-            ←
+            Previous
           </button>
           <div className="lightbox-stage">
             {isVideoGallery ? (
@@ -170,7 +170,7 @@ function GalleryView({ galleryKey }: { galleryKey: GalleryKey }) {
             onClick={() => move(1)}
             aria-label="Next image"
           >
-            →
+            Next
           </button>
         </div>
       )}
@@ -182,10 +182,9 @@ function GalleryHeader({ title }: { title: string }) {
   return (
     <div className="gallery-header">
       <a className="text-link" href="#home">
-        ← Back to work
+        Back to work
       </a>
       <h1>{title}</h1>
-      <span className="gallery-header-mark">↘</span>
     </div>
   );
 }
@@ -208,7 +207,7 @@ function ContactView() {
             images.
           </p>
           <a className="contact-email" href="mailto:pablotcoelho@hotmail.com">
-            pablotcoelho@hotmail.com ↗
+            pablotcoelho@hotmail.com
           </a>
         </div>
         <div className="contact-details">
@@ -218,21 +217,21 @@ function ContactView() {
             target="_blank"
             rel="noreferrer"
           >
-            Instagram · personal ↗
+            Instagram · personal
           </a>
           <a
             href="https://www.instagram.com/comicshut/?hl=en"
             target="_blank"
             rel="noreferrer"
           >
-            Instagram · Comics Hut ↗
+            Instagram · Comics Hut
           </a>
           <a
             href="https://www.tiktok.com/@comicshut"
             target="_blank"
             rel="noreferrer"
           >
-            TikTok · Comics Hut ↗
+            TikTok · Comics Hut
           </a>
         </div>
       </section>
@@ -390,12 +389,12 @@ function App() {
           {lightsOn ? "Lights off" : "Lights on"}
         </button>
         <button
-          className="menu-toggle"
+          className={`menu-toggle ${isMenuOpen ? "is-open" : ""}`}
           type="button"
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
-          {isMenuOpen ? "×" : "☰"}
+          <span className="menu-icon" aria-hidden="true" />
         </button>
       </header>
 
@@ -417,7 +416,7 @@ function App() {
                   scenic art and comics.
                 </p>
                 <a className="text-link" href="#work">
-                  Explore the work <span aria-hidden="true">↗</span>
+                  Explore the work
                 </a>
               </div>
             </div>
@@ -432,25 +431,15 @@ function App() {
           <div className="ticker" aria-label="Creative disciplines">
             <div className="ticker-track">
               <span>Illustration</span>
-              <b>✳</b>
               <span>Painting</span>
-              <b>✳</b>
               <span>Animation</span>
-              <b>✳</b>
               <span>Comics</span>
-              <b>✳</b>
               <span>Scenic art</span>
-              <b>✳</b>
               <span>Illustration</span>
-              <b>✳</b>
               <span>Painting</span>
-              <b>✳</b>
               <span>Animation</span>
-              <b>✳</b>
               <span>Comics</span>
-              <b>✳</b>
               <span>Scenic art</span>
-              <b>✳</b>
             </div>
           </div>
 
@@ -464,7 +453,7 @@ function App() {
               <h2 id="catalogue-title">
                 Everything that lives
                 <br />
-                here<span className="heading-mark">↘</span>
+                here
               </h2>
             </div>
             <div className="category-list">
@@ -481,9 +470,6 @@ function App() {
                   <span className="category-copy">
                     <h3>{category.title}</h3>
                     <p>{category.description}</p>
-                  </span>
-                  <span className="category-arrow" aria-hidden="true">
-                    ↗
                   </span>
                 </a>
               ))}
@@ -521,7 +507,7 @@ function App() {
                 productions and created Comics Hut, home of The Moonyman.
               </p>
               <a className="text-link" href="mailto:pablotcoelho@hotmail.com">
-                Let's talk <span aria-hidden="true">↗</span>
+                Let's talk
               </a>
             </div>
           </section>
@@ -548,7 +534,7 @@ function App() {
             <span aria-hidden="true">◎</span> Comics Hut
           </a>
           <button type="button" onClick={() => navigate("about")}>
-            About me <span aria-hidden="true">↗</span>
+            About me
           </button>
         </div>
       </footer>

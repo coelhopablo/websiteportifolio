@@ -96,7 +96,49 @@ button {
   border: 0;
   cursor: pointer;
   display: none;
-  padding: 4px;
+  height: 28px;
+  padding: 4px 0;
+  position: relative;
+  width: 28px;
+}
+.menu-icon,
+.menu-icon::before,
+.menu-icon::after {
+  background: currentColor;
+  content: "";
+  display: block;
+  height: 2px;
+  position: absolute;
+  right: 0;
+  transition:
+    transform 0.25s ease,
+    width 0.25s ease;
+  width: 24px;
+}
+.menu-icon {
+  top: 13px;
+}
+.menu-icon::before {
+  top: -7px;
+  width: 17px;
+}
+.menu-icon::after {
+  top: 7px;
+  width: 20px;
+}
+.menu-toggle.is-open .menu-icon {
+  background: transparent;
+}
+.menu-toggle.is-open .menu-icon::before,
+.menu-toggle.is-open .menu-icon::after {
+  top: 0;
+  width: 24px;
+}
+.menu-toggle.is-open .menu-icon::before {
+  transform: rotate(45deg);
+}
+.menu-toggle.is-open .menu-icon::after {
+  transform: rotate(-45deg);
 }
 .intro-section {
   isolation: isolate;
@@ -640,7 +682,10 @@ h2 {
   color: #fff;
   cursor: pointer;
   font-family: "DM Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
   position: absolute;
+  text-transform: uppercase;
   z-index: 1;
 }
 .lightbox-close {
@@ -661,6 +706,10 @@ h2 {
 }
 @media (max-width: 700px) {
   .site-header {
+    position: relative;
+    z-index: 10;
+  }
+  .site-header {
     padding: 22px;
   }
   .menu-toggle {
@@ -670,15 +719,16 @@ h2 {
   }
   .site-nav {
     align-items: flex-start;
-    background: var(--ink);
+    background: var(--paper);
     color: var(--paper);
     display: none;
     flex-direction: column;
-    gap: 25px;
-    inset: 0 0 auto;
-    padding: 90px 22px 30px;
-    position: absolute;
-    z-index: 2;
+    gap: 20px;
+    inset: 0;
+    justify-content: center;
+    padding: 100px 28px 80px;
+    position: fixed;
+    z-index: 9;
   }
   .site-nav.is-open {
     display: flex;
@@ -686,8 +736,17 @@ h2 {
   .site-nav a,
   .site-nav a.is-current {
     border: 0;
-    color: var(--paper);
-    font-size: 14px;
+    color: var(--ink);
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(34px, 12vw, 54px);
+    font-weight: 700;
+    letter-spacing: -0.07em;
+    line-height: 0.95;
+    padding: 0;
+    text-transform: none;
+  }
+  .site-nav a.is-current {
+    color: var(--coral);
   }
   .intro-section {
     padding: 75px 22px 90px;
@@ -801,7 +860,8 @@ h2 {
   }
   .lightbox-nav {
     bottom: 44px;
-    font-size: 30px;
+    font-size: 10px;
+    letter-spacing: 0.08em;
     top: auto;
     transform: none;
   }
