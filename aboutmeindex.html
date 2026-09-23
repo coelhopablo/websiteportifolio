@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="refresh" content="0; url=./index.html#about" />
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "DynaPuff", cursive;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #3494e6, #ec6ead);
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      header {
+        background-color: #333;
+        padding: 10px;
+        text-align: center;
+        color: #fff;
+        z-index: 3;
+      }
+
+      .social-buttons {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 5px;
+      }
+
+      .social-button {
+        display: inline-block;
+      }
+
+      .social-button img {
+        max-width: 37.5px;
+        vertical-align: middle;
+        opacity: 50%;
+      }
+
+      #personal-instagram-logo {
+        max-width: 37.5px;
+      }
+
+      #tiktok-logo {
+        max-width: 28px;
+      }
+
+      .footer {
+        margin-top: auto;
+        text-align: center;
+        padding: 5px;
+        background-color: #333;
+        color: #fff;
+        z-index: 3;
+      }
+
+      .copyright {
+        margin-top: 5px;
+        font-size: 10px;
+      }
+
+      h3 {
+        margin-top: 120px;
+        margin-bottom: 120px;
+        margin-left: 50px;
+        margin-right: 50px;
+        text-align: center;
+      }
+      h4,
+      a {
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 id="Title">About me</h1>
+    </header>
+    <h4><a href="./index.html">Back</a></h4>
+
+    <div>
+      <h3>Howdy folks! I'm Pablo Coelho!</h3>
+      <h3>
+        For the past 10 years +, I've been knee-deep in paints, pixels, and
+        everything in between. From slinging brushes to crafting animations,
+        I've done it all. You can see some of my work on Rede Globo, Brazil's
+        top TV channel. I've contributed to shows like "Programa Domingão do
+        Faustão," "O Outro Lado do Paraíso," "Deus Salve o Rei," and others.
+        With a Bachelor of Fine Arts from the Federal University of Rio de
+        Janeiro and a Master of Arts in Animation from Universidade Lusófona of
+        Lisbon, I've got the credentials to back up my wild imagination. In my
+        journey through these two places, I've leveled up all my skills in all
+        fields of fine arts, digital arts, and web design. I've created Comics
+        Hut, an Instagram and TikTok page to showcase all my comic creations. If
+        you want to catch up, just follow @comicshut. There you'll find "The
+        Moonyman" making its debut, and there's a whole universe of characters,
+        stories, and surprises waiting to unfold. So, if you're up for a bit of
+        creative chaos or just fancy a chat about life, art, or why beer is way
+        better than red wine, hit me up on my social media channels.
+      </h3>
+    </div>
+
+    <div class="footer">
+      <div class="social-buttons">
+        <div class="social-button">
+          <a
+            href="https://www.instagram.com/pablotcoelho/?hl=en"
+            target="_blank"
+          >
+            <img
+              id="personal-instagram-logo"
+              src="./illustration/social media logo (1).png"
+              alt="Personal Instagram"
+            />
+          </a>
+        </div>
+        <div class="social-button">
+          <a href="https://www.tiktok.com/@comicshut" target="_blank">
+            <img
+              id="tiktok-logo"
+              src="./illustration/social media logo (2).png"
+              alt="TikTok"
+            />
+          </a>
+        </div>
+        <div class="social-button">
+          <a href="https://www.instagram.com/comicshut/?hl=en" target="_blank">
+            <img
+              id="artistic-instagram-logo"
+              src="./illustration/social media logo (1).png"
+              alt="Artistic Instagram"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="copyright">&copy; 2024 Pablo Coelho</div>
+    </div>
+
+    <script>
+      const images = document.querySelectorAll(".image");
+      let index = 0;
+
+      function showImage(index) {
+        images.forEach((image) => image.classList.remove("active"));
+        images[index].classList.add("active");
+      }
+
+      function nextImage() {
+        index = (index + 1) % images.length;
+        showImage(index);
+      }
+
+      setInterval(nextImage, 5000);
+    </script>
+  </body>
+</html>

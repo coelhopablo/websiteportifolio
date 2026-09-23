@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="refresh"
+      content="0; url=./index.html#gallery/animation"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "DynaPuff", cursive;
+        background-color: black;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 100vh;
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
+
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
+        max-height: calc(100vh - 200px);
+        overflow: auto;
+        overflow: hidden;
+      }
+
+      .photo {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        margin: 10px;
+        transition: transform 0.3s;
+        overflow: hidden;
+      }
+
+      .photo:hover {
+        transform: scale(1.2);
+      }
+
+      .photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+
+      .fullscreen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+      }
+
+      .fullscreen iframe {
+        width: 80%;
+        height: 80%;
+      }
+
+      .exit-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        color: white;
+        font-size: 20px;
+      }
+
+      footer {
+        width: 100%;
+        text-align: center;
+        background-color: black;
+        padding: 10px;
+        flex-shrink: 0;
+      }
+
+      @media screen and (max-width: 700px) {
+        .gallery {
+          flex-direction: row;
+          align-items: center;
+          max-height: initial;
+        }
+
+        .photo {
+          width: 50%;
+        }
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h4>
+        <a href="./index.html#gallery/animation">Open Animation gallery</a>
+      </h4>
+    </header>
+
+    <div class="gallery">
+      <div
+        class="photo"
+        onclick="openFullscreen('https://www.youtube.com/embed/J8FTVXAFAMw')"
+      >
+        <img
+          src="https://i.ytimg.com/vi/J8FTVXAFAMw/mqdefault.jpg"
+          alt="Thumbnail 1"
+        />
+      </div>
+      <div
+        class="photo"
+        onclick="openFullscreen('https://www.youtube.com/embed/pxsE5ACnX9M')"
+      >
+        <img
+          src="https://i.ytimg.com/vi/pxsE5ACnX9M/mqdefault.jpg"
+          alt="Thumbnail 2"
+        />
+      </div>
+      <div
+        class="photo"
+        onclick="openFullscreen('https://www.youtube.com/embed/KhQxHcAP4x0')"
+      >
+        <img
+          src="https://i.ytimg.com/vi/KhQxHcAP4x0/mqdefault.jpg"
+          alt="Thumbnail 3"
+        />
+      </div>
+      <div
+        class="photo"
+        onclick="openFullscreen('https://www.youtube.com/embed/4eYwLjWKWoc')"
+      >
+        <img
+          src="https://i.ytimg.com/vi/4eYwLjWKWoc/mqdefault.jpg"
+          alt="Thumbnail 4"
+        />
+      </div>
+    </div>
+
+    <div class="fullscreen" id="fullscreen">
+      <span class="exit-btn" onclick="closeFullscreen()">X</span>
+      <iframe id="fullscreen-video" allowfullscreen></iframe>
+    </div>
+
+    <footer>
+      <p>Portfolio Pablo Coelho 2024</p>
+    </footer>
+
+    <script>
+      function openFullscreen(videoSrc) {
+        document.getElementById("fullscreen-video").src = videoSrc;
+        document.getElementById("fullscreen").style.display = "flex";
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeFullscreen() {
+        document.getElementById("fullscreen").style.display = "none";
+        document.getElementById("fullscreen-video").src = "";
+        document.body.style.overflow = "auto";
+      }
+    </script>
+  </body>
+</html>

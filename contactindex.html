@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="refresh" content="0; url=./index.html#contact" />
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "DynaPuff", cursive;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #3494e6, #ec6ead);
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      header {
+        background-color: #333;
+        padding: 10px;
+        text-align: center;
+        color: #fff;
+        z-index: 3;
+      }
+
+      .social-buttons {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 5px;
+      }
+
+      .social-button {
+        display: inline-block;
+      }
+
+      .social-button img {
+        max-width: 37.5px;
+        vertical-align: middle;
+        opacity: 50%;
+      }
+
+      #personal-instagram-logo {
+        max-width: 37.5px;
+      }
+
+      #tiktok-logo {
+        max-width: 28px;
+      }
+
+      .footer {
+        margin-top: auto;
+        text-align: center;
+        padding: 5px;
+        background-color: #333;
+        color: #fff;
+        z-index: 3;
+      }
+
+      .copyright {
+        margin-top: 5px;
+        font-size: 10px;
+      }
+
+      h3 {
+        margin-top: 120px;
+        margin-bottom: 120px;
+        margin-left: 50px;
+        margin-right: 50px;
+        text-align: center;
+      }
+      h4,
+      a {
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+      }
+      li {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 id="Title">Contacts</h1>
+    </header>
+    <h4><a href="./index.html">Back</a></h4>
+
+    <div>
+      <h3>
+        <li>Email: pablotcoelho@hotmail.com</li>
+
+        <li>Personal Instagram: @pablotcoelho</li>
+        <li>Comics hut's Instagram: @comicshut</li>
+        <li>Comics hut's Tiktok: @comicshut</li>
+      </h3>
+    </div>
+
+    <div class="footer">
+      <div class="social-buttons">
+        <div class="social-button">
+          <a
+            href="https://www.instagram.com/pablotcoelho/?hl=en"
+            target="_blank"
+          >
+            <img
+              id="personal-instagram-logo"
+              src="./illustration/social media logo (1).png"
+              alt="Personal Instagram"
+            />
+          </a>
+        </div>
+        <div class="social-button">
+          <a href="https://www.tiktok.com/@comicshut" target="_blank">
+            <img
+              id="tiktok-logo"
+              src="./illustration/social media logo (2).png"
+              alt="TikTok"
+            />
+          </a>
+        </div>
+        <div class="social-button">
+          <a href="https://www.instagram.com/comicshut/?hl=en" target="_blank">
+            <img
+              id="artistic-instagram-logo"
+              src="./illustration/social media logo (1).png"
+              alt="Artistic Instagram"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="copyright">&copy; 2024 Pablo Coelho</div>
+    </div>
+
+    <script>
+      const images = document.querySelectorAll(".image");
+      let index = 0;
+
+      function showImage(index) {
+        images.forEach((image) => image.classList.remove("active"));
+        images[index].classList.add("active");
+      }
+
+      function nextImage() {
+        index = (index + 1) % images.length;
+        showImage(index);
+      }
+
+      setInterval(nextImage, 5000);
+    </script>
+  </body>
+</html>

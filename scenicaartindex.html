@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="refresh" content="0; url=./index.html#gallery/scenic" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "DynaPuff", cursive;
+      background-color: black;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .gallery {
+      flex-wrap: nowrap;
+      overflow-y: scroll;
+      margin-top: 20px;
+      max-height: 400px;
+    }
+    .gallery::-webkit-scrollbar {
+      display: none;
+    }
+
+    .photo {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      margin: 10px;
+      transition: transform 0.3s;
+      overflow: hidden;
+    }
+
+    .photo:hover {
+      transform: scale(1.2);
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .fullscreen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+    }
+
+    .fullscreen img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    .exit-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      color: white;
+      font-size: 20px;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      background-color: black;
+      padding: 10px;
+    }
+
+    @media screen and (min-width: 700px) {
+      .gallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  </style>
+  <header>
+    <h4><a href="./index.html#gallery/scenic">Open Scenic art gallery</a></h4>
+  </header>
+  <body>
+    <div class="gallery">
+      <div class="photo" onclick="openFullscreen('./scenic/scenic (1).jpg')">
+        <a
+          ><img src="./scenic/scenic (1).jpg" alt="./scenic/scenic (1).jpg"
+        /></a>
+      </div>
+
+      <div class="photo" onclick="openFullscreen('./scenic/scenic (2).jpg')">
+        <a
+          ><img src="./scenic/scenic (2).jpg" alt="./scenic/scenic (2).jpg"
+        /></a>
+      </div>
+
+      <div class="photo" onclick="openFullscreen('./scenic/scenic (3).jpg')">
+        <a
+          ><img src="./scenic/scenic (3).jpg" alt="./scenic/scenic (3).jpg"
+        /></a>
+      </div>
+
+      <div class="photo" onclick="openFullscreen('./scenic/scenic (4).jpg')">
+        <a
+          ><img src="./scenic/scenic (4).jpg" alt="./scenic/scenic (4).jpg"
+        /></a>
+      </div>
+
+      <div class="photo" onclick="openFullscreen('./scenic/scenic (5).jpg')">
+        <a
+          ><img src="./scenic/scenic (5).jpg" alt="./scenic/scenic (5).jpg"
+        /></a>
+      </div>
+
+      <div class="photo" onclick="openFullscreen('./scenic/scenic (6).jpg')">
+        <a
+          ><img src="./scenic/scenic (6).jpg" alt="./scenic/scenic (6).jpg"
+        /></a>
+      </div>
+
+      <div class="photo" onclick="openFullscreen('./scenic/scenic (7).jpg')">
+        <a
+          ><img src="./scenic/scenic (7).jpg" alt="./scenic/scenic (7).jpg"
+        /></a>
+      </div>
+
+      <div class="photo" onclick="openFullscreen('./scenic/scenic (8).jpg')">
+        <a
+          ><img src="./scenic/scenic (8).jpg" alt="./scenic/scenic (8).jpg"
+        /></a>
+      </div>
+
+      <div class="photo" onclick="openFullscreen('./scenic/scenic (9).jpg')">
+        <a
+          ><img src="./scenic/scenic (9).jpg" alt="./scenic/scenic (9).jpg"
+        /></a>
+      </div>
+
+      <div class="photo" onclick="openFullscreen('./scenic/scenic (10).jpg')">
+        <a
+          ><img src="./scenic/scenic (10).jpg" alt="./scenic/scenic (10).jpg"
+        /></a>
+      </div>
+
+      <div class="photo" onclick="openFullscreen('./scenic/scenic (11).jpg')">
+        <a
+          ><img src="./scenic/scenic (11).jpg" alt="./scenic/scenic (11).jpg"
+        /></a>
+      </div>
+
+      <div class="photo" onclick="openFullscreen('./scenic/scenic (12).jpg')">
+        <a
+          ><img src="./scenic/scenic (12).jpg" alt="./scenic/scenic (12).jpg"
+        /></a>
+      </div>
+
+      <div class="photo" onclick="openFullscreen('./scenic/scenic (13).jpg')">
+        <a
+          ><img src="./scenic/scenic (13).jpg" alt="./scenic/scenic (13).jpg"
+        /></a>
+      </div>
+
+      <div class="photo" onclick="openFullscreen('./scenic/scenic (14).jpg')">
+        <a
+          ><img src="./scenic/scenic (14).jpg" alt="./scenic/scenic (14).jpg"
+        /></a>
+      </div>
+
+      <div class="photo" onclick="openFullscreen('./scenic/scenic (15).jpg')">
+        <a
+          ><img src="./scenic/scenic (15).jpg" alt="./scenic/scenic (15).jpg"
+        /></a>
+      </div>
+
+      <div class="photo" onclick="openFullscreen('./scenic/scenic (16).jpg')">
+        <a
+          ><img src="./scenic/scenic (16).jpg" alt="./scenic/scenic (16).jpg"
+        /></a>
+      </div>
+
+      <div class="photo" onclick="openFullscreen('./scenic/scenic (17).jpg')">
+        <a
+          ><img src="./scenic/scenic (17).jpg" alt="./scenic/scenic (17).jpg"
+        /></a>
+      </div>
+
+      <div class="photo" onclick="openFullscreen('./scenic/scenic (18).jpg')">
+        <a
+          ><img src="./scenic/scenic (18).jpg" alt="./scenic/scenic (18).jpg"
+        /></a>
+      </div>
+
+      <div class="photo" onclick="openFullscreen('./scenic/scenic (19).jpg')">
+        <a
+          ><img src="./scenic/scenic (19).jpg" alt="./scenic/scenic (19).jpg"
+        /></a>
+      </div>
+
+      <div class="photo" onclick="openFullscreen('./scenic/scenic (21).jpg')">
+        <a
+          ><img src="./scenic/scenic (21).jpg" alt="./scenic/scenic (21).jpg"
+        /></a>
+      </div>
+
+      <div class="photo" onclick="openFullscreen('./scenic/scenic (22).jpg')">
+        <a
+          ><img src="./scenic/scenic (22).jpg" alt="./scenic/scenic (22).jpg"
+        /></a>
+      </div>
+
+      <div class="photo" onclick="openFullscreen('./scenic/scenic (23).jpg')">
+        <a
+          ><img src="./scenic/scenic (23).jpg" alt="./scenic/scenic (23).jpg"
+        /></a>
+      </div>
+
+      <div class="photo" onclick="openFullscreen('./scenic/scenic (24).jpg')">
+        <a
+          ><img src="./scenic/scenic (24).jpg" alt="./scenic/scenic (24).jpg"
+        /></a>
+      </div>
+
+      <div class="photo" onclick="openFullscreen('./scenic/scenic (25).jpg')">
+        <a
+          ><img src="./scenic/scenic (25).jpg" alt="./scenic/scenic (25).jpg"
+        /></a>
+      </div>
+
+      <div class="photo" onclick="openFullscreen('./scenic/scenic (26).jpg')">
+        <a
+          ><img src="./scenic/scenic (26).jpg" alt="./scenic/scenic (26).jpg"
+        /></a>
+      </div>
+
+      <div class="photo" onclick="openFullscreen('./scenic/scenic (27).jpg')">
+        <a
+          ><img src="./scenic/scenic (27).jpg" alt="./scenic/scenic (27).jpg"
+        /></a>
+      </div>
+
+      <div class="photo" onclick="openFullscreen('./scenic/scenic (28).jpg')">
+        <a
+          ><img src="./scenic/scenic (28).jpg" alt="./scenic/scenic (28).jpg"
+        /></a>
+      </div>
+
+      <div class="photo" onclick="openFullscreen('./scenic/scenic (29).jpg')">
+        <a
+          ><img src="./scenic/scenic (29).jpg" alt="./scenic/scenic (29).jpg"
+        /></a>
+      </div>
+
+      <div class="photo" onclick="openFullscreen('./scenic/scenic (30).jpg')">
+        <a
+          ><img src="./scenic/scenic (30).jpg" alt="./scenic/scenic (30).jpg"
+        /></a>
+      </div>
+
+      <div class="photo" onclick="openFullscreen('./scenic/scenic (31).jpg')">
+        <a
+          ><img src="./scenic/scenic (31).jpg" alt="./scenic/scenic (31).jpg"
+        /></a>
+      </div>
+
+      <div class="photo" onclick="openFullscreen('./scenic/scenic (32).jpg')">
+        <a
+          ><img src="./scenic/scenic (32).jpg" alt="./scenic/scenic (32).jpg"
+        /></a>
+      </div>
+
+      <div class="photo" onclick="openFullscreen('./scenic/scenic (33).jpg')">
+        <a
+          ><img src="./scenic/scenic (33).jpg" alt="./scenic/scenic (33).jpg"
+        /></a>
+      </div>
+
+      <div class="photo" onclick="openFullscreen('./scenic/scenic (34).jpg')">
+        <a
+          ><img src="./scenic/scenic (34).jpg" alt="./scenic/scenic (34).jpg"
+        /></a>
+      </div>
+
+      <div class="photo" onclick="openFullscreen('./scenic/scenic (35).jpg')">
+        <a
+          ><img src="./scenic/scenic (35).jpg" alt="./scenic/scenic (35).jpg"
+        /></a>
+      </div>
+
+      <div class="photo" onclick="openFullscreen('./scenic/scenic (36).jpg')">
+        <a
+          ><img src="./scenic/scenic (36).jpg" alt="./scenic/scenic (36).jpg"
+        /></a>
+      </div>
+    </div>
+
+    <div class="fullscreen" id="fullscreen">
+      <span class="exit-btn" onclick="closeFullscreen()">X</span>
+      <img id="fullscreen-img" src="" alt="Fullscreen Image" />
+    </div>
+
+    <footer>
+      <p>Portifolium Pablo Coelho 2024</p>
+    </footer>
+
+    <script>
+      var currentIndex = 0;
+
+      function openFullscreen(imageSrc, index) {
+        currentIndex = index;
+        document.getElementById("fullscreen-img").src = imageSrc;
+        document.getElementById("fullscreen").style.display = "flex";
+      }
+
+      function closeFullscreen() {
+        document.getElementById("fullscreen").style.display = "none";
+      }
+
+      function navigateGallery(direction) {
+        currentIndex += direction;
+        var photos = document.querySelectorAll(".photo img");
+        if (currentIndex < 0) {
+          currentIndex = photos.length - 1;
+        } else if (currentIndex >= photos.length) {
+          currentIndex = 0;
+        }
+        openFullscreen(photos[currentIndex].src, currentIndex);
+      }
+    </script>
+  </body>
+</html>
